@@ -2,7 +2,7 @@
  Dynamic test results - UGR laboratory
 
 ## Requirements:
-- pip install eqsig
+- pip install eqsig (https://pypi.org/project/eqsig/)
 - Also requires the numpy, matplotlib and scipy libraries.
 
 ## Usage
