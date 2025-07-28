@@ -13,10 +13,10 @@ import eqsig as eq
 #%% Input
 wall_number_tag = '1'       # Use '1', '2' or '3'
 measurment = 'd'            # Use 'a' for acceleration, 'd' for laser displacement
-case = 1                    # index of the desired test "case_tag"
+case = 3                    # index of the desired test "case_tag"
 accelerometer = 2           # 0 for "sis" accelerometer, 
                             # 1 for 'IP' and 2 for 'OoP' accelerometers
-laser = 1                   # 0 for base displacement laser sensor and
+laser = 0                   # 0 for base displacement laser sensor and
                             # 1 for top displacement laser sensor
 
 #%% Functions
@@ -103,6 +103,7 @@ def procesar_data_disp(disp,dt=1/600.):
     d_raw = eq.Signal(disp, dt)
     d_raw.remove_average()
     d = sp.signal.decimate(d_raw.values,3)
+    d = d- d[0]
     return d
 
 
